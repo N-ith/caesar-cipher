@@ -68,13 +68,13 @@
             const alphabet = 'abcdefghijklmnopqrstuvwxyz';
             const isEncrypt = operation === 'encrypt';
             shift = isEncrypt ? shift : -shift;
-            shift = (shift % 26 + 26) % 26; // Handle negative shifts
+            shift = (shift % 26 + 26) % 26; 
 
             return text.split('').map(char => {
                 const isUpperCase = char === char.toUpperCase();
                 const lowerChar = char.toLowerCase();
                 if (!alphabet.includes(lowerChar)) {
-                    return char; // Non-alphabetic characters are returned as is
+                    return char; 
                 }
                 const newIndex = (alphabet.indexOf(lowerChar) + shift) % 26;
                 const newChar = alphabet[newIndex];
